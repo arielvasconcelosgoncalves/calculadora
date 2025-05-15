@@ -61,10 +61,18 @@ function back(){
 }
 function execute(){
     let current = document.getElementById('result').innerHTML;
+    let evaluation = (eval(current)).toFixed(12);
     if(current)
     {
-        document.getElementById('result').innerHTML = eval(current);
-        displayResult = true;
+        evaluation = parseFloat(evaluation).toString();
+        if (evaluation.length > 15) {
+            evaluation = evaluation.slice(0, 15);
+            document.getElementById('result').innerHTML = evaluation;
+            displayResult = true;
+        }else{
+            document.getElementById('result').innerHTML = evaluation;
+            displayResult = true;
+        }
     }
     else
     {
