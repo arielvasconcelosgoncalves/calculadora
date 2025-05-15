@@ -1,47 +1,67 @@
-function insert(num){
-            var numero = document.getElementById('result').innerHTML;
-            document.getElementById('result').innerHTML = numero + num;
-    }
-function insertOperator(num){
-        var resultado = document.getElementById('result').innerHTML;
-        if(resultado.charAt(resultado.length - 1) === '+' 
-        || resultado.charAt(resultado.length - 1) === '-' 
-        || resultado.charAt(resultado.length - 1) === '/' 
-        || resultado.charAt(resultado.length - 1) === '*'){
+let displayResult = false;
 
-            
-        }
-        else{
-            var numero = document.getElementById('result').innerHTML;
-            document.getElementById('result').innerHTML = numero + num;
-        }
-            
+function insert(num){
+
+    if (displayResult === true){
+
+            document.getElementById('result').innerHTML = num;
+            displayResult = false;
+
+    }else{
+
+        number = document.getElementById('result').innerHTML;
+        document.getElementById('result').innerHTML = number + num;
+        
     }
+
+
+    
+}
+function insertOperator(num){
+    let result = document.getElementById('result').innerHTML;
+    if(result.charAt(result.length - 1) === '+' 
+    || result.charAt(result.length - 1) === '-' 
+    || result.charAt(result.length - 1) === '/' 
+    || result.charAt(result.length - 1) === '*'){
+
+    }
+    else if(displayResult === true){
+        
+        document.getElementById('result').innerHTML = num;
+        displayResult = false;
+
+    }
+    else{
+        let number = document.getElementById('result').innerHTML;
+        document.getElementById('result').innerHTML = number + num;
+    }   
+}
 function insertPoint(num){
-            var resultado = document.getElementById('result').innerHTML;
-        if(resultado.charAt(resultado.length - 1) === '.'){
-          
-        }
-        else{
-            var numero = document.getElementById('result').innerHTML;
-            document.getElementById('result').innerHTML = numero + num;
-        }
+    let result = document.getElementById('result').innerHTML;
+    if(result.charAt(result.length - 1) === '.'){
+        
     }
+    else{
+        let number = document.getElementById('result').innerHTML;
+        document.getElementById('result').innerHTML = number + num;
+    }
+}
 function clean(){
-            document.getElementById('result').innerHTML = "";
-    }
+    document.getElementById('result').innerHTML = "";
+}
 function back(){
-            var resultado = document.getElementById('result').innerHTML;
-            document.getElementById('result').innerHTML = resultado.substring(0, resultado.length -1);
-    }
+    let result = document.getElementById('result').innerHTML;
+    document.getElementById('result').innerHTML = result.substring(0, result.length -1);
+}
 function execute(){
-        var resultado = document.getElementById('result').innerHTML;
-        if(resultado)
-        {
-            document.getElementById('result').innerHTML = eval(resultado);
-        }
-        else
-        {
-            document.getElementById('result').innerHTML = ""
-        }
+    let result = document.getElementById('result').innerHTML;
+    if(result)
+    {
+        document.getElementById('result').innerHTML = eval(result);
+        displayResult = true;
     }
+    else
+    {
+        document.getElementById('result').innerHTML = ""
+    }
+}
