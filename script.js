@@ -1,4 +1,5 @@
 let displayResult = false;
+const MAX_LENGHT = 15;
 
 function insert(num){
 
@@ -9,55 +10,60 @@ function insert(num){
 
     }else{
 
-        number = document.getElementById('result').innerHTML;
-        document.getElementById('result').innerHTML = number + num;
+        current = document.getElementById('result').innerHTML;
+        if (current.length < MAX_LENGHT){
+        document.getElementById('result').innerHTML = current + num;
+        }
         
     }
 
-
-    
 }
 function insertOperator(num){
-    let result = document.getElementById('result').innerHTML;
-    if(result.charAt(result.length - 1) === '+' 
-    || result.charAt(result.length - 1) === '-' 
-    || result.charAt(result.length - 1) === '/' 
-    || result.charAt(result.length - 1) === '*'){
+    let current = document.getElementById('result').innerHTML;
 
-    }
-    else if(displayResult === true){
-        
-        document.getElementById('result').innerHTML = num;
-        displayResult = false;
+    if(current.length < MAX_LENGHT){
+        if(current.charAt(current.length - 1) === '+' 
+        || current.charAt(current.length - 1) === '-' 
+        || current.charAt(current.length - 1) === '/' 
+        || current.charAt(current.length - 1) === '*'){
 
-    }
-    else{
-        let number = document.getElementById('result').innerHTML;
-        document.getElementById('result').innerHTML = number + num;
-    }   
+        }
+        else if(displayResult === true){
+            
+            document.getElementById('result').innerHTML = num;
+            displayResult = false;
+
+        }
+        else{
+            
+            document.getElementById('result').innerHTML = current + num;
+        } 
+    }  
 }
 function insertPoint(num){
-    let result = document.getElementById('result').innerHTML;
-    if(result.charAt(result.length - 1) === '.'){
-        
-    }
-    else{
-        let number = document.getElementById('result').innerHTML;
-        document.getElementById('result').innerHTML = number + num;
+    let current = document.getElementById('result').innerHTML;
+
+    if(current.length < MAX_LENGHT){
+        if(current.charAt(result.length - 1) === '.'){
+            
+        }
+        else{
+            document.getElementById('result').innerHTML = current + num;
+        }
     }
 }
 function clean(){
     document.getElementById('result').innerHTML = "";
 }
 function back(){
-    let result = document.getElementById('result').innerHTML;
-    document.getElementById('result').innerHTML = result.substring(0, result.length -1);
+    let current = document.getElementById('result').innerHTML;
+    document.getElementById('result').innerHTML = current.substring(0, current.length -1);
 }
 function execute(){
-    let result = document.getElementById('result').innerHTML;
-    if(result)
+    let current = document.getElementById('result').innerHTML;
+    if(current)
     {
-        document.getElementById('result').innerHTML = eval(result);
+        document.getElementById('result').innerHTML = eval(current);
         displayResult = true;
     }
     else
