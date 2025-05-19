@@ -14,9 +14,10 @@ Este é um projeto simples de uma **calculadora funcional** desenvolvida com **H
 ## 📁 Estrutura do Projeto
 ```plaintext
 calculadora/
-├── index.html # Estrutura da calculadora
-├── style.css # Estilos da interface
-└── script.js # Lógica e interatividade
+├── index.html           # Estrutura da calculadora
+├── style.css            # Estilos da interface
+└── script.js            # Lógica e interatividade
+└── calculadora.jpg      # Imagem da interface da calculadora
 ```
 
 ## 🖥️ Tecnologias Utilizadas
@@ -27,7 +28,7 @@ calculadora/
 
 ## 📸 Captura de Tela
 
-![Calculadora Web](https://via.placeholder.com/600x300.png?text=Preview+da+Calculadora)  
+![Calculadora Web](calculadora.jpg)  
 
 
 ## 🚀 Como Executar
