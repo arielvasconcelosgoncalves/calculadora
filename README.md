@@ -12,12 +12,12 @@ Este é um projeto simples de uma **calculadora funcional** desenvolvida com **H
 - Interface responsiva e moderna, com destaque para o resultado.
 
 ## 📁 Estrutura do Projeto
-
+```plaintext
 calculadora/
 ├── index.html # Estrutura da calculadora
 ├── style.css # Estilos da interface
 └── script.js # Lógica e interatividade
-
+```
 
 ## 🖥️ Tecnologias Utilizadas
 
