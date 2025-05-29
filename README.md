@@ -27,7 +27,7 @@ calculadora/
 - **CSS3** — design e estilo da calculadora
 - **JavaScript (Vanilla)** — funcionalidades e lógica dos botões
 
-## 📸 Captura de Tela
+## 📸 Demonstração: [Acesse aqui](https://calculadora-ariel.netlify.app/)
 
 ![Calculadora Web](calculadora.jpg)  
 
